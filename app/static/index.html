@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowDesk AI Ops Hub</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Multi-industry AI Agent Demo</p>
+        <h1>FlowDesk AI Ops Hub</h1>
+        <p class="subtitle">把 SOP、FAQ、工单经验变成可追溯的一线处置助手。</p>
+      </div>
+      <div class="status" id="health">checking...</div>
+    </section>
+
+    <section class="grid">
+      <div class="card span-2">
+        <h2>AI 处置助手</h2>
+        <label>场景</label>
+        <select id="scenario">
+          <option value="retail_ops">连锁门店运维</option>
+          <option value="ecommerce_support">电商客服履约</option>
+          <option value="campus_ops">校园/园区后勤</option>
+          <option value="device_inspection">设备巡检</option>
+          <option value="general">通用场景</option>
+        </select>
+        <label>现场问题</label>
+        <textarea id="question" rows="5">门店收银机突然无法扫码，顾客排队严重，应该怎么处理？</textarea>
+        <button id="askBtn">生成处置建议</button>
+      </div>
+
+      <div class="card">
+        <h2>工单创建</h2>
+        <label>标题</label>
+        <input id="ticketTitle" value="收银机扫码故障" />
+        <label>描述</label>
+        <textarea id="ticketDescription" rows="5">门店 A 收银机扫码枪无响应，顾客排队超过 10 人。</textarea>
+        <button id="ticketBtn">创建工单</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card span-2">
+        <h2>AI 输出</h2>
+        <div id="answer" class="answer empty">等待生成...</div>
+      </div>
+      <div class="card">
+        <h2>工单列表</h2>
+        <div id="tickets" class="tickets empty">暂无数据</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
